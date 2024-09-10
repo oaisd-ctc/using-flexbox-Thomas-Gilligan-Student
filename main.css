@@ -7,8 +7,6 @@
     justify-content: flex-end;
     align-items: center;
     height: 350px;
-    transition-property: all;
-    transition-duration: 200ms;
 }
 
 .item {
@@ -35,39 +33,58 @@
     background-color: pink;
 }
 
-.nav-bar {
+nav {
     border-bottom: 2px solid blueviolet;
     text-align: center;
     margin: 10px;
     margin-left: 0;
     width: 100%;
     height: 20px;
-}
-
-.nav-bar ol {
-    list-style-type: none;
     padding-left: 0;
 }
-.nav-bar li {
+
+nav a {
+    list-style-type: none;
+    padding-left: 0;
     display: inline-block;
 }
 
-.nav-bar li:not(:last-child):after {
-    content: '-';
-    padding: 0 5px;
-}
-
-.nav-bar li:hover {
-    color:blue;
+/* The hover pseudo-class allows for any element's property to be changed while the user's mouse cursor is over top of it. */
+nav a:hover {
+    color:blueviolet;
     font-weight: bold;
 }
 
+/* The :nth-child(n) pseudo-class selects every element that is the n child of its parent, in this case using the word "odd" to select every odd list item. */
 .odd-pseudo li:nth-child(odd) {
     background-color: lightyellow;
 }
 
-.container:hover{
+/* The hover pseudo-class allows for any element's property to be changed while the user's mouse cursor is over top of it. */
+.item:hover{
     background-color: lightblue;
-    flex-direction: column;
-    color: red;
+    flex: 50%;
+    color: white;
+    transition-property: all;
+    transition-duration: 200ms;
+}
+
+/* The focus pseudo-class allows for an input element's property to be changed while the user has it selected.  */
+.item2:focus {
+    background-color: magenta;
+    transition-property: all;
+    transition-duration: 2s;
+    width: 75%;
+    height: 75%;
+}
+
+header {
+    position: fixed;
+    color: darkred;
+    font-style: italic;
+}
+
+/* The :not(selector) pseudo-class applies the included declarations to any element that is not using that selector. (fairly self-explanatory) */
+:not(header){
+    color: black;
 }
